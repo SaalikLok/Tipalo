@@ -38,6 +38,10 @@ public class input extends AppCompatActivity {
         TextView billQuestion = (TextView) findViewById(R.id.billQuestion);
         TextView splitBetween = (TextView) findViewById(R.id.splitBetween);
         TextView loveWaiter = (TextView) findViewById(R.id.loveWaiter);
+        final TextView totalBillView = (TextView) findViewById(R.id.totalBillView);
+        final TextView perPersonView = (TextView) findViewById(R.id.perPersonView);
+        final TextView tipAmountView = (TextView) findViewById(R.id.tipAmountView);
+        final TextView tipPerPersonView = (TextView) findViewById(R.id.tipPerPersonView);
 
         //Define the custom font and set all of the text views to that font
         Typeface raleway = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Regular.ttf");
@@ -45,6 +49,10 @@ public class input extends AppCompatActivity {
         billQuestion.setTypeface(raleway);
         splitBetween.setTypeface(raleway);
         loveWaiter.setTypeface(raleway);
+        totalBillView.setTypeface(raleway);
+        perPersonView.setTypeface(raleway);
+        tipAmountView.setTypeface(raleway);
+        tipPerPersonView.setTypeface(raleway);
 
         Button submitButton = (Button) findViewById(R.id.button);
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -66,8 +74,19 @@ public class input extends AppCompatActivity {
                 billPerPerson = totalBill/numPeople;
                 tipPerPerson = tipAmount/numPeople;
 
-                Log.i("TotalBill", "Total Bill:" + totalBill);
-                Log.i("BillPer", "Bill Per Person:" + billPerPerson);
+                //Display Numbers
+                String strTotalBill = String.format("%.2f", totalBill);
+                totalBillView.setText("Total Bill: $"+strTotalBill);
+
+                String strBillPerPerson = String.format("%.2f", billPerPerson);
+                perPersonView.setText("$"+strBillPerPerson+" per person");
+
+                String strTipAmount = String.format("%.2f", tipAmount);
+                tipAmountView.setText("$"+strTipAmount+" tip");
+
+                String strTipPerPerson = String.format("%.2f", tipPerPerson);
+                tipPerPersonView.setText("$"+strTipPerPerson+" tip per person");
+                
             }
         });
     }
