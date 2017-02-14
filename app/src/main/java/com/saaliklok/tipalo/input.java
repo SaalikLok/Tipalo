@@ -3,11 +3,11 @@ package com.saaliklok.tipalo;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class input extends AppCompatActivity {
 
@@ -58,6 +58,8 @@ public class input extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
+
                 //Getting all the EditText Values as Strings
                 String strInitBill = initBill.getText().toString();
                 String strPeople = people.getText().toString();
@@ -86,7 +88,25 @@ public class input extends AppCompatActivity {
 
                 String strTipPerPerson = String.format("%.2f", tipPerPerson);
                 tipPerPersonView.setText("$"+strTipPerPerson+" tip per person");
-                
+
+                    Toast success = Toast.makeText(getApplicationContext(), "Check your bill!", Toast.LENGTH_SHORT);
+                    success.show();
+
+                }
+                catch(Exception e){
+                    Toast errorToast = Toast.makeText(getApplicationContext(), "Oops! Something went wrong. Check your numbers!", Toast.LENGTH_LONG);
+                    errorToast.show();
+                }
+
+            }
+        });
+
+        Button finishButton = (Button) findViewById(R.id.finishButton);
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Close the Program
+                finish();
             }
         });
     }

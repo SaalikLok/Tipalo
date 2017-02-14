@@ -19,7 +19,6 @@
     tools:context="com.saaliklok.tipalo.input" >
 
 
-
     <TextView
         android:text="@string/app_name"
         android:layout_width="wrap_content"
@@ -108,7 +107,7 @@
         android:layout_gravity="center"/>
 
     <TextView
-        android:text="TextView"
+        android:text="Total Bill: $--"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/totalBillView"
@@ -119,7 +118,7 @@
         android:layout_marginTop="60dp"/>
 
     <TextView
-        android:text="TextView"
+        android:text="$-- per person"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/perPersonView"
@@ -130,7 +129,7 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:text="TextView"
+        android:text="$-- tip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tipAmountView"
@@ -141,7 +140,7 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:text="TextView"
+        android:text="$-- tip per person"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tipPerPersonView"
