@@ -19,21 +19,25 @@ public class input extends AppCompatActivity {
     double tipPerPerson;
     double billPerPerson;
 
-    //The Inputs
-    EditText initBill = (EditText) findViewById(R.id.billInitial);
-    EditText people = (EditText) findViewById(R.id.numberPeople);
-    EditText tipPercent = (EditText) findViewById(R.id.tipPercent);
-
-    //The Text Views
-    TextView title = (TextView) findViewById(R.id.titleView);
-    TextView billQuestion = (TextView) findViewById(R.id.billQuestion);
-    TextView splitBetween = (TextView) findViewById(R.id.splitBetween);
-    TextView loveWaiter = (TextView) findViewById(R.id.loveWaiter);
+    EditText initBill;
+    EditText people;
+    EditText tipPercent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
+
+        //The Inputs
+        initBill = (EditText) findViewById(R.id.billInitial);
+        people = (EditText) findViewById(R.id.numberPeople);
+        tipPercent = (EditText) findViewById(R.id.tipPercent);
+
+        //The Text Views
+        TextView title = (TextView) findViewById(R.id.titleView);
+        TextView billQuestion = (TextView) findViewById(R.id.billQuestion);
+        TextView splitBetween = (TextView) findViewById(R.id.splitBetween);
+        TextView loveWaiter = (TextView) findViewById(R.id.loveWaiter);
 
         //Define the custom font and set all of the text views to that font
         Typeface raleway = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Regular.ttf");
@@ -54,7 +58,7 @@ public class input extends AppCompatActivity {
                 //Convert all of the inputs that are strings into doubles
                 numinitBill = Double.valueOf(strInitBill);
                 numPeople = Double.valueOf(strPeople);
-                numtipPercent = Double.valueOf(strtipPercent);
+                numtipPercent = Double.valueOf(strtipPercent)/100;
 
                 //Calculate all of the final numbers the user needs
                 tipAmount = numinitBill * numtipPercent;
