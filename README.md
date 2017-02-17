@@ -2,4 +2,5 @@
 
 An attractive, simple and open source Tip Calculator, exculsively for Android.
 
-Tipalo will soon be available for free on the Google Play Store!
+Tipalo is available on the Google Play Store for free!
+https://play.google.com/store/apps/details?id=com.saaliklok.tipalo
